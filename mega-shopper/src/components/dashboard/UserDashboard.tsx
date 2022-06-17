@@ -2,7 +2,7 @@ interface IDashboardProps {
     currentUser: User | undefined
 }
 
-function Dashboard(props: IDashboardProps) {
+function UserDashboard(props: IDashboardProps) {
 
 
     return (
@@ -14,4 +14,4 @@ function Dashboard(props: IDashboardProps) {
 
 
 }
-export default Dashboard;
+export default UserDashboard;
