@@ -1,3 +1,5 @@
+import { User } from "../../models/user";
+
 interface IDashboardProps {
     currentUser: User | undefined
 }
@@ -6,7 +8,7 @@ function UserDashboard(props: IDashboardProps) {
 
 
     return (
-            !props.currentUser ? <p>You are not logged in!</p> :
+            !props.currentUser ? <Navigate to="/login"/> :
             <>
                 <h1>Welcome, {props.currentUser.firstName}!</h1>
             </>
@@ -15,3 +17,16 @@ function UserDashboard(props: IDashboardProps) {
 
 }
 export default UserDashboard;
+
+// TODO: - add Route path in App.tsx [under ""function App()""]
+/*    return (
+        <Routes>
+        <Route path="/dashboard" element={<Dashboard currentUser={authUser}/>}/>
+        </Routes>
+      );
+       */
+
+// TODO: - add add props Navigated to dashboard in Login.tsx [above: <h4>Log into Mega-Shopper!</4>]
+/*      return (
+            props.currentUser ? <Navigate to="/dashboard"/> :
+       */
