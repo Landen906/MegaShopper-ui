@@ -1,3 +1,5 @@
+import { User } from "../../models/user";
+
 interface IDashboardProps {
     currentUser: User | undefined
 }
