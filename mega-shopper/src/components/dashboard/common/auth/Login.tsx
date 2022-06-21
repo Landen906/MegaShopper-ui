@@ -39,6 +39,7 @@ export const Login = (props) => {
         setError("There was an error with the server!")
       })
   };
+
   return (
     <div>
       <h1 className="login-title">Login</h1>
@@ -56,6 +57,7 @@ export const Login = (props) => {
         placeholder='password' 
       />
       <button onClick={handleLogin}>Login</button>
+      {errors}
     </div>
   )
 }
