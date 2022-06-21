@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@mui/x-data-grid": "^5.12.2",
-    "react-admin": "^4.1.5",
-    "react-admin-lb4": "^1.0.3"
-  }
-}
