@@ -8,13 +8,16 @@ export const Register = () => {
     const [password, setPassword] = useState<string>();
     const [errors, setError] = useState<string>();
 
-    const handleFirst = () => {}
-    const handleLast = () => {}
-    const handleEmail = () => {}
-    const handleAddress = () => {}
-    const handlePassword = () => {}
+    const handleFirst = (e: SyntheticEvent) => {setFirstName((e.target as HTMLInputElement).value)} 
+    const handleLast = (e: SyntheticEvent) => {setLastName((e.target as HTMLInputElement).value)}
+    const handleEmail = (e: SyntheticEvent) => {setEmail((e.target as HTMLInputElement).value)}
+    const handleAddress = (e: SyntheticEvent) => {setAddress((e.target as HTMLInputElement).value)}
+    const handlePassword = (e: SyntheticEvent) => {setPassword((e.target as HTMLInputElement).value)}
     const handleRegister = () => { 
-        fetch("/register", {
+ 
+        if  ( !firstName || !lastName || !email || !address || !password)  return setError("Must Provide Required Credentials To Sign Up");
+       
+            fetch("/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
