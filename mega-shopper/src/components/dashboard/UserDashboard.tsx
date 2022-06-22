@@ -10,12 +10,10 @@ function UserDashboard() {
 
 
     return (
-            !props.currentUser ? <Navigate to="/login"/> :
-            <>
-                <h1>Welcome, {props.currentUser.firstName}!</h1>
-           </>
         <div>
             {/* !props.currentUser ? <Navigate to="/login"/> :
+                <h1>Welcome, {props.currentUser.firstName}!</h1>
+            !props.currentUser ? <Navigate to="/login"/> :
                 <h1>Welcome, {props.currentUser.firstName}!</h1> */}
         </div>
     )

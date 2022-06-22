@@ -17,7 +17,7 @@ export const Login = () => {
   const handleLogin = () => {
 // checking to see if email and password are null
     if (!email || !password) {
-        setError("Must provide a email and password!")
+      return setError("Must provide a email and password!")
     }
 // Fetching when my if condition is true
     fetch("/login", {
@@ -61,6 +61,7 @@ export const Login = () => {
         placeholder='password' 
       />
       <button onClick={handleLogin}>Login</button>
+      <br />
       {errors}
     </div>
   )
