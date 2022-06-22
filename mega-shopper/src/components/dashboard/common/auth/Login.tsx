@@ -7,17 +7,19 @@ import { useNavigate } from "react-router";
 //     setCurrentUser: (nextUser: User) => void
 // }
 
-export const Login = (props) => {
+export const Login = () => {
+// setting some state and variables
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setError] = useState("");
   const navigate = useNavigate();
-
+// Making a function that will handle the login when a user presses a button
   const handleLogin = () => {
-
+// checking to see if email and password are null
     if (!email || !password) {
         setError("Must provide a email and password!")
     }
+// Fetching when my if condition is true
     fetch("/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -26,19 +28,22 @@ export const Login = (props) => {
         password: password,
       }),
     })
+// checking whether the status is 200 or not. then stringify if the status is 200
       .then(res => {
-        if (res.status != 200) {
+        if (res.status !== 200) {
             setError("Could not validate credentials!")
         }
         else {
         res.json()}
     })
+// Getting the promise back and setting the current user to the user that was returned.
       .then(user => {
-        props.setCurrentUser(user);
+        // props.setCurrentUser(user);
       }).catch(error => {
         setError("There was an error with the server!")
       })
   };
+
   return (
     <div>
       <h1 className="login-title">Login</h1>
@@ -56,6 +61,7 @@ export const Login = (props) => {
         placeholder='password' 
       />
       <button onClick={handleLogin}>Login</button>
+      {errors}
     </div>
   )
 }
