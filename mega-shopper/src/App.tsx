@@ -7,18 +7,13 @@ import { Register } from './components/dashboard/common/auth/Register';
 function App() {
   return (
       <div className="App">
-    {/* <Admin dataProvider={lb4Provider('http//localhost:5000')}>
-      <Resource name='customers' list={CustomerList} />
-    </Admin> */}
-  
-  <BrowserRouter>
-    <Routes>
-      <Route path="/register" element={<Register/>} />
-      <Route path="/login" element={<Login/>} />
-      <Route path="/dashboard" element={<UserDashboard/>} />
-    </Routes>
-  </BrowserRouter>
-       
+        <BrowserRouter>
+          <Routes>
+            <Route path="/register" element={<Register/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/dashboard" element={<UserDashboard/>} />
+          </Routes>
+        </BrowserRouter>
       </div>
   );
 }
