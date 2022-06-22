@@ -6,14 +6,11 @@ import { Admin, Resource } from 'react-admin';
 import CustomerList from './components/dashboard/CustomerList';
 import CustomerOrders from './components/dashboard/CustomerOrders';
 import Products from './components/dashboard/Products';
+import EmployeeDashboard from './components/dashboard/EmployeeDashboard';
 
 function App() {
   return (
-    <><Admin dataProvider={lb4Provider('http//localhost:5000')}>
-      <Resource name='Customers' list={CustomerList} />
-      <Resource name='Orders' list={CustomerOrders} />
-      <Resource name='Products' list={Products} />
-    </Admin>
+
     
     <div className="App">
         <header className="App-header">
@@ -30,7 +27,7 @@ function App() {
             Learn React
           </a>
         </header>
-      </div></>
+      </div>
   );
 }
 
