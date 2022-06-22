@@ -14,8 +14,8 @@ export const Register = () => {
     const handleAddress = (e: SyntheticEvent) => {setAddress((e.target as HTMLInputElement).value)}
     const handlePassword = (e: SyntheticEvent) => {setPassword((e.target as HTMLInputElement).value)}
     const handleRegister = () => { 
- 
-        if  ( !firstName || !lastName || !email || !address || !password)  return setError("Must Provide Required Credentials To Sign Up");
+ console.log ("Test")
+        if  ( !firstName || !lastName || !email || !address || !password)  {return setError("Must Provide Required Credentials To Sign Up");}
        
             fetch("/register", {
             method: "POST",
@@ -45,15 +45,22 @@ export const Register = () => {
             <h1>Sign Up</h1>
             First Name:
             <input onChange={handleFirst} type="text" placeholder="First Name"/>
+            <br/>
             Last Name:
             <input onChange={handleLast} type="text" placeholder="Last Name" />
+            <br/>
             Email:
             <input onChange={handleEmail} type="text" placeholder="Email" />
+            <br/>
             Address:
             <input onChange={handleAddress} type="text" placeholder="Address" />
+            <br/>
             Password:
             <input onChange={handlePassword} type="text" placeholder="Password" />
+            <br/>
             <button onClick={handleRegister}> Sign Up </button>
+            <br/>
+            {errors}
         </div>
     )
 }
