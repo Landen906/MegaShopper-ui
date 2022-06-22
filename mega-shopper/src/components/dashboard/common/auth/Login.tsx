@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 //     setCurrentUser: (nextUser: User) => void
 // }
 
-export const Login = (props) => {
+export const Login = () => {
 // setting some state and variables
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,7 +38,7 @@ export const Login = (props) => {
     })
 // Getting the promise back and setting the current user to the user that was returned.
       .then(user => {
-        props.setCurrentUser(user);
+        // props.setCurrentUser(user);
       }).catch(error => {
         setError("There was an error with the server!")
       })
