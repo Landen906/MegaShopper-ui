@@ -1,6 +1,6 @@
 import React, {SyntheticEvent, useState} from 'react'
 
-export const Login = () => {
+export const Register = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
