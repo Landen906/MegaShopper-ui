@@ -6,11 +6,9 @@ import CustomerOrders from './CustomerOrders';
 import Products from './Products';
 
 
-interface IDashboardProps {
-    currentUser: User | undefined
-}
 
-function EmployeeDashboard(props: IDashboardProps) {
+
+function EmployeeDashboard() {
 
     return (
     <Admin dataProvider={lb4Provider('http//localhost:5000')}>
