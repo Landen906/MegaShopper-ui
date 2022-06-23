@@ -3,7 +3,7 @@ import { User } from '../../models/user';
 
 import {List, Datagrid, TextField, Filter, SearchInput} from 'react-admin';
 
-const ItemFilterBy = (props: any) => (
+const ItemFilter = (props: any) => (
     <Filter {...props}>
         <SearchInput placeholder='Search items...' source='title' resettable alwaysOn>
         </SearchInput>
@@ -13,7 +13,15 @@ const ItemFilterBy = (props: any) => (
 function Cart(props: any) {
 
     return(
-        <div><p>This is a test!</p></div>
+        <div id='cartItems'>
+            {
+                <List {...props} filters={ItemFilter}>
+                    <TextField source='title'></TextField>
+                    <TextField source='description'></TextField>
+                    <TextField source='price'></TextField>
+                </List>
+            }
+        </div>
     );
 }
 

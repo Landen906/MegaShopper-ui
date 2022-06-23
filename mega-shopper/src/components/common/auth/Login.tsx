@@ -1,5 +1,5 @@
-import React, {SyntheticEvent, useState} from 'react'
-import UserDashboard from '../../UserDashboard'
+import React, {SyntheticEvent, useState} from 'react';
+import UserDashboard from '../../dashboard/UserDashboard';
 import { useNavigate } from "react-router";
 
 // interface ILoginProps {
