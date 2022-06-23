@@ -1,9 +1,10 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserDashboard from './components/dashboard/UserDashboard';
-import { Login } from './components/dashboard/common/auth/Login';
-import { Register } from './components/dashboard/common/auth/Register';
+import { Login } from './components/common/auth/Login';
+import { Register } from './components/common/auth/Register';
 import EmployeeDashboard from './components/dashboard/EmployeeDashboard';
+import Cart from './components/dashboard/Cart';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/dashboard" element={<UserDashboard/>} />
+            <Route path='/cart' element={<Cart/>} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -1,12 +1,12 @@
 import React from 'react';
 import {List, Datagrid, TextField, Filter, SearchInput} from 'react-admin';
 
-const ProductFilter = (props) => (<Filter {...props}>
+const ProductFilter = (props: any) => (<Filter {...props}>
     <SearchInput placeholder='Product ID' source='item_id'
     resettable alwaysOn />
 </Filter>)
 
-function Products(props){
+function Products(props: any){
 return(
      <List {...props} filters={ProductFilter}>
         <Datagrid>
