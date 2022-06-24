@@ -21,6 +21,7 @@ function Cart(props: any) {
                     <TextField source='price'></TextField>
                 </List>
             }
+            <button id="checkout">Checkout here!</button>
         </div>
     );
 }
