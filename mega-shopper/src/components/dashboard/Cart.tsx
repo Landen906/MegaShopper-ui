@@ -10,20 +10,16 @@ const ItemFilter = (props: any) => (
     </Filter>   
 );  // would it make sense to use the item title? 
 
-function Cart(props: any) {
 
-    return(
-        <div id='cartItems'>
-            {
-                <List {...props} filters={ItemFilter}>
-                    <TextField source='title'></TextField>
-                    <TextField source='description'></TextField>
-                    <TextField source='price'></TextField>
-                </List>
-            }
-            <button id="checkout">Checkout here!</button>
-        </div>
-    );
+// TO-DO: add functions pulling from the api
+function Cart(props: Array<any>) {
+    props.map(item => {
+        return (
+            <li className='collection-item avatar' key={item.id}>
+                
+            </li>
+        )
+    });
 }
 
 export default Cart;
