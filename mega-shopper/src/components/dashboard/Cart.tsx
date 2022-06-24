@@ -1,8 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { User } from "../../models/user";
 
-import { List, Datagrid, TextField, Filter, SearchInput } from "react-admin";
-
 import { ItemType } from "../../models/item";
 const items: Array<ItemType> = [
     {
@@ -30,16 +28,16 @@ const items: Array<ItemType> = [
         img: "https://media.discordapp.net/attachments/535920055121346563/989735250206797824/20220623_223411.jpg",
     },
 ];
-const ItemFilter = (props: any) => (
-	<Filter {...props}>
-		<SearchInput
-			placeholder="Search items..."
-			source="title"
-			resettable
-			alwaysOn
-		></SearchInput>
-	</Filter>
-); // would it make sense to use the item title?
+// const ItemFilter = (props: any) => (
+// 	<Filter {...props}>
+// 		<SearchInput
+// 			placeholder="Search items..."
+// 			source="title"
+// 			resettable
+// 			alwaysOn
+// 		></SearchInput>
+// 	</Filter>
+// ); // would it make sense to use the item title?
 
 // TO-DO: add functions pulling from the api
 function Cart(): any {
