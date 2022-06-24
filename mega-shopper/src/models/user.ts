@@ -1,5 +1,5 @@
 export class User {
-    customerId: string;
+    customerId: Number;
     firstName: string;
     lastName: string;
     email: string;
@@ -8,7 +8,7 @@ export class User {
     password: string;
 
 
-    constructor(id: string, fn: string, ln: string, em: string, ad: string, un: string, pw: string) {
+    constructor(id: Number, fn: string, ln: string, em: string, ad: string, un: string, pw: string) {
         this.customerId = id;
         this.firstName = fn;
         this.lastName = ln;
@@ -19,3 +19,5 @@ export class User {
     }
 
 }
+
+export default User;

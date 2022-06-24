@@ -8,7 +8,7 @@ const ProductFilter = (props: any) => (<Filter {...props}>
 
 function Products(props: any){
 return(
-     <List {...props} filters={ProductFilter}>
+     <List {...props} filters={<ProductFilter/>}>
         <Datagrid>
             <TextField source='item_id'/>
             <TextField source='title'/>
