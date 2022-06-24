@@ -2,13 +2,13 @@ import React from 'react';
 import {List, Datagrid, TextField, Filter, SearchInput} from 'react-admin';
 
 const OrderFilter = (props: any) => (<Filter {...props}>
-    <SearchInput placeholder='Customer ID' source='customer_id'
+    <SearchInput placeholder='Customer Order' source='orders'
     resettable alwaysOn />
 </Filter>)
 
 function CustomerOrders(props: any){
 return(
-     <List {...props} filters={OrderFilter}>
+     <List {...props} filters={<OrderFilter/>}>
         <Datagrid>
             <TextField source='customer_id'/>
             <TextField source='first_name'/>
