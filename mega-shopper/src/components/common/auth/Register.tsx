@@ -30,7 +30,7 @@ export const Register = () => {
     })
 
     .then(res => {
-        if (res.status != 200) {
+        if (res.status !== 200) {
             setError("Must Provide Required Credentials To Sign Up");
         }
     })
