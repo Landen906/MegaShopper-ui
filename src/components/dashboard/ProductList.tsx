@@ -19,7 +19,6 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function ProductList(){
     const products = useContext(GlobalContext)
-    
     const productList = products.map(({id, title, desc, img}: ItemType) => (
         <Link key={id} to={`/product/${id}`}>
             <Card sx={{ maxWidth: 345 }}>
@@ -32,7 +31,7 @@ function ProductList(){
                 />
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    {title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">{desc}</Typography>
                 </CardContent>
@@ -40,6 +39,7 @@ function ProductList(){
             </Card>
         </Link>
     ));
+    console.log(products)
 return(
     <div>
        {productList}

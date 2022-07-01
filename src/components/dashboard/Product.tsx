@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { ItemType } from '../../models/item'
 import { GlobalContext } from '../../context/GlobalState'
+import { ItemType } from '../../models/item'
 
 export const Product = () => {
     const products = useContext(GlobalContext)
     const params = useParams();
     const product = products.find((p: ItemType) => `${p.id}` === params.id);
+    console.log(product)
   return (
     <div>
         <h1>{product.title}</h1>

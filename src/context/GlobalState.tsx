@@ -33,7 +33,6 @@ const GlobalProvider = ({children}: ItemProp) => {
         categoryId: 1,
         img: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
         }])
-
     // useEffect(() => {
     //     fetch('https://fakestoreapi.com/products')
     //       .then(res => res.json())
@@ -42,6 +41,7 @@ const GlobalProvider = ({children}: ItemProp) => {
     //         setProducts(data);
     //       });
     //   }, []);
+    console.log(products)
   return (
     <GlobalContext.Provider value={products}>
         {children}
