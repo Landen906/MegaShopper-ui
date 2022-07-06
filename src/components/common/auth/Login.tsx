@@ -9,9 +9,9 @@ import { useNavigate } from "react-router";
 
 export const Login = () => {
 // setting some state and variables
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setError] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [errors, setError] = useState<string>("");
   const navigate = useNavigate();
 // Making a function that will handle the login when a user presses a button
   const handleLogin = () => {
@@ -38,7 +38,7 @@ export const Login = () => {
     })
 // Getting the promise back and setting the current user to the user that was returned.
       .then(user => {
-        // props.setCurrentUser(user);
+        // setUser(user);
       }).catch(error => {
         setError("There was an error with the server!")
       })

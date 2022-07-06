@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ItemType } from "../models/item";
+import User from "../models/user";
 
 const GlobalContext = React.createContext<any>({});
 
@@ -8,8 +9,8 @@ type ItemProp = {
 }
 
 const GlobalProvider = ({children}: ItemProp) => { 
-
-    const [products, setProducts] = useState<ItemType[]>([{
+  const [user, setUser] = useState<User | null>(null)
+  const [products, setProducts] = useState<ItemType[]>([{
         id: 0,
         title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
         desc: "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
@@ -41,9 +42,14 @@ const GlobalProvider = ({children}: ItemProp) => {
     //         setProducts(data);
     //       });
     //   }, []);
-    console.log(products)
+  useEffect(() => {
+    fetch('/user')
+      .then(res => res.json())
+      .then(data => { setUser(data) });
+      }, []);
+
   return (
-    <GlobalContext.Provider value={products}>
+    <GlobalContext.Provider value={{user, setUser, products, setProducts}}>
         {children}
     </GlobalContext.Provider>
   )
