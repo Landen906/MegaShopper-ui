@@ -1,6 +1,8 @@
 import React, {SyntheticEvent, useState} from 'react';
 import UserDashboard from '../../dashboard/UserDashboard';
 import { useNavigate } from "react-router";
+import { useContext } from 'react';
+import { GlobalContext } from '../../../context/GlobalState';
 
 // interface ILoginProps {
 //     currentUser: User | undefined,
@@ -13,6 +15,8 @@ export const Login = () => {
   const [password, setPassword] = useState<string>("");
   const [errors, setError] = useState<string>("");
   const navigate = useNavigate();
+  const { setUser } = useContext(GlobalContext);
+
 // Making a function that will handle the login when a user presses a button
   const handleLogin = () => {
 // checking to see if email and password are null
@@ -32,13 +36,16 @@ export const Login = () => {
       .then(res => {
         if (res.status !== 200) {
             setError("Could not validate credentials!")
+            setEmail('')
+            setPassword('')
         }
         else {
         res.json()}
     })
 // Getting the promise back and setting the current user to the user that was returned.
       .then(user => {
-        // setUser(user);
+        setUser(user);
+        navigate('/')
       }).catch(error => {
         setError("There was an error with the server!")
       })
