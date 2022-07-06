@@ -34,14 +34,13 @@ const GlobalProvider = ({children}: ItemProp) => {
         categoryId: 1,
         img: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
         }])
-    // useEffect(() => {
-    //     fetch('https://fakestoreapi.com/products')
-    //       .then(res => res.json())
-    //       .then(data => {
-    //         console.log(data)
-    //         setProducts(data);
-    //       });
-    //   }, []);
+    useEffect(() => {
+        fetch('/products')
+          .then(res => res.json())
+          .then(data => {
+            setProducts(data);
+          });
+      }, []);
   useEffect(() => {
     fetch('/user')
       .then(res => res.json())

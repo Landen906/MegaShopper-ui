@@ -39,7 +39,6 @@ function ProductList(){
             </Card>
         </Link>
     ));
-    console.log(products)
 return(
     <div>
        {productList}

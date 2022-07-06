@@ -1,15 +1,22 @@
 import React, {SyntheticEvent, useState} from 'react';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { GlobalContext } from '../../../context/GlobalState';
 
 export const Register = () => {
     const [firstName, setFirstName] = useState<string>();
     const [lastName, setLastName] = useState<string>();
+    const [username, setUsername] = useState<string>();
     const [email, setEmail] = useState<string>();
     const [address, setAddress] = useState<string>();
     const [password, setPassword] = useState<string>();
     const [errors, setError] = useState<string>();
+    const { setUser } = useContext(GlobalContext);
+    const navigate = useNavigate()
 
     const handleFirst = (e: SyntheticEvent) => {setFirstName((e.target as HTMLInputElement).value)} 
     const handleLast = (e: SyntheticEvent) => {setLastName((e.target as HTMLInputElement).value)}
+    const handleUsername = (e: SyntheticEvent) => {setUsername((e.target as HTMLInputElement).value)}
     const handleEmail = (e: SyntheticEvent) => {setEmail((e.target as HTMLInputElement).value)}
     const handleAddress = (e: SyntheticEvent) => {setAddress((e.target as HTMLInputElement).value)}
     const handlePassword = (e: SyntheticEvent) => {setPassword((e.target as HTMLInputElement).value)}
@@ -23,6 +30,7 @@ export const Register = () => {
       body: JSON.stringify({
         firstName: firstName,
         lastName: lastName,
+        username: username,
         email: email,
         address: address,
         password: password,
@@ -35,7 +43,8 @@ export const Register = () => {
         }
     })
     .then(user => {
-
+        setUser(user);
+        navigate('/')
     }
         ) 
 
@@ -48,6 +57,9 @@ export const Register = () => {
             <br/>
             Last Name:
             <input onChange={handleLast} type="text" placeholder="Last Name" />
+            <br/>
+            Username:
+            <input onChange={handleUsername} type="text" placeholder="Username" />
             <br/>
             Email:
             <input onChange={handleEmail} type="text" placeholder="Email" />
