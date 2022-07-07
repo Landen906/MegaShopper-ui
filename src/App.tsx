@@ -20,7 +20,7 @@ function App() {
       <div>
         <GlobalProvider>
           <Navbar/> 
-          <BrowserRouter>
+          <BrowserRouter basename='/'>
               <Routes>
                 <Route path='/' element={<Home/>} />
                 <Route path="/employeedashboard" element={<EmployeeDashboard/>} />
