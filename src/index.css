@@ -52,3 +52,35 @@ code {
   background-color: royalblue;  
 }
 
+.pl {
+  background-color: darkblue;
+  margin-bottom: 10px;
+  border-radius: 40px;
+  padding: 2rem;
+  min-height: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap;
+  width: auto;
+  color: black;
+}
+.product {
+  background-color: grey;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 2rem;
+  min-height: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap;
+  width: auto;
+  color: black;
+}
+
+.pi {
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;  
+}
