@@ -2,6 +2,7 @@
   "name": "mega-shopper",
   "version": "0.1.0",
   "private": true,
+  "main": "index.tsx",
   "dependencies": {
     "@mui/x-data-grid": "^5.12.2",
     "@testing-library/jest-dom": "^5.16.4",
