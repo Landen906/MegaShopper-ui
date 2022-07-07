@@ -41,14 +41,26 @@ const GlobalProvider = ({children}: ItemProp) => {
             setProducts(data);
           });
       }, []);
-  useEffect(() => {
-    fetch('/user')
-      .then(res => res.json())
-      .then(data => { setUser(data) });
-      }, []);
+
+      const addItem = (item: ItemType) => {
+        setProducts([...products, item])
+      }
+
+      const deleteItem = (itemId: number) => {
+        fetch(`/item/${itemId}`,{
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        itemId: itemId
+      })},
+        )
+        const findItem = products.find(i => i.id === itemId);
+        const newProducts = products.filter(p => p.id !== findItem?.id)
+        setProducts(newProducts)
+      }
 
   return (
-    <GlobalContext.Provider value={{user, setUser, products, setProducts}}>
+    <GlobalContext.Provider value={{user, setUser, products, setProducts, addItem, deleteItem}}>
         {children}
     </GlobalContext.Provider>
   )
