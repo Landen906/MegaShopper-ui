@@ -68,7 +68,7 @@ export const Register = () => {
             <input onChange={handleAddress} type="text" placeholder="Address" />
             <br/>
             Password:
-            <input onChange={handlePassword} type="text" placeholder="Password" />
+            <input onChange={handlePassword} type="password" placeholder="Password" />
             <br/>
             <button onClick={handleRegister}> Sign Up </button>
             <br/>

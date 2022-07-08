@@ -15,9 +15,9 @@ export default function Navbar() {
         <li>
           <a href="/cart">Cart</a>
         </li>
-        <li>
+        {/* <li>
           <a href="/dashboard">Customer Dashboard</a>
-        </li>
+        </li> */}
         <li>
           <a href="/employeedashboard">Employee Dashboard</a>
         </li>
