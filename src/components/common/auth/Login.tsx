@@ -24,29 +24,28 @@ export const Login = () => {
       return setError("Must provide a email and password!")
     }
 // Fetching when my if condition is true
-    fetch("http://megashopperapi-env-1.eba-xhhmp83v.us-east-2.elasticbeanstalk.com/MegaShopper/users", {
-      method: "GET",
+    fetch("http://localhost:5000/MegaShopper/auth", {
+      method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: email,
         password: password,
       }),
-    })
-// checking whether the status is 200 or not. then stringify if the status is 200
-      .then(res => {
-        if (res.status !== 200) {
-            setError("Could not validate credentials!")
-            setEmail('')
-            setPassword('')
+    }).then(resp => {
+        if (resp.status != 201) {
+          setPassword('');
+          setEmail('');
+          setError('Inavlid credentials.');
+          return;
         }
-        else {
-        res.json()}
-    })
-// Getting the promise back and setting the current user to the user that was returned.
-      .then(user => {
+        resp.json();
+      }
+        ).then(user => {
         setUser(user);
         navigate('/')
       }).catch(error => {
+        console.log(error);
+        
         setError("There was an error with the server!")
       })
   };
