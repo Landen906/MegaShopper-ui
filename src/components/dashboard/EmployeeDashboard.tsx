@@ -27,7 +27,7 @@ function EmployeeDashboard() {
     const {addItem, user, products, deleteItem} = useContext(GlobalContext);
 
     useEffect(() => {
-        fetch('http://megashopperapi-env-1.eba-xhhmp83v.us-east-2.elasticbeanstalk.com/MegaShopper/users')
+        fetch('http://localhost:5000/MegaShopper/users')
             .then(resp => resp.json())
             .then(data => setUsers(data));
 
@@ -71,6 +71,7 @@ function EmployeeDashboard() {
             <Typography variant="subtitle1">MegaShopper Employee Dashboard</Typography>
             <div style={{height: 800, width: '100%'}}>
                 <DataGrid
+                    getRowId={(user) => user.customerId}
                     rows={users}
                     columns={columns}
                     pageSize={5}
