@@ -24,7 +24,7 @@ export const Register = () => {
  console.log ("Test")
         if  ( !firstName || !lastName || !email || !address || !password)  {return setError("Must Provide Required Credentials To Sign Up");}
        
-            fetch("http://megashopperapi-env-1.eba-xhhmp83v.us-east-2.elasticbeanstalk.com/users", {
+            fetch("http://megashopperapi-env-1.eba-xhhmp83v.us-east-2.elasticbeanstalk.com/MegaShopper/users", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
