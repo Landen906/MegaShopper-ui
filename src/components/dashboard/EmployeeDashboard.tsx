@@ -6,9 +6,9 @@ import { ItemType } from "../../models/item";
 import  User  from "../../models/user";
 
 const columns: GridColDef[] = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'firstname', headerName: 'First name', width: 130 },
-    { field: 'lastname', headerName: 'Last name', width: 130 },
+    { field: 'customerId', headerName: 'ID', width: 70 },
+    { field: 'firstName', headerName: 'First name', width: 130 },
+    { field: 'lastName', headerName: 'Last name', width: 130 },
     { field: 'email', headerName: 'Email Address', width: 130 },
     { field: 'address', headerName: 'Address', width: 130 },
     { field: 'username', headerName: 'Username', width: 130 },
@@ -42,7 +42,7 @@ function EmployeeDashboard() {
               return setError("Fields cannot be blank")
             }
         // Fetching when my if condition is true
-            fetch("/item", {
+            fetch("http://megashopperapi-env-1.eba-xhhmp83v.us-east-2.elasticbeanstalk.com/MegaShopper/items", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -73,7 +73,7 @@ function EmployeeDashboard() {
                 <DataGrid
                     rows={users}
                     columns={columns}
-                    pageSize={10}
+                    pageSize={5}
                     rowsPerPageOptions={[5]}
                     checkboxSelection
                 />
