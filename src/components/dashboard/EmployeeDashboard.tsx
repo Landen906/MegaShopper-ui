@@ -27,7 +27,7 @@ function EmployeeDashboard() {
     const {addItem, user, products, deleteItem} = useContext(GlobalContext);
 
     useEffect(() => {
-        fetch('http://megashopperapi-env-1.eba-xhhmp83v.us-east-2.elasticbeanstalk.com/MegaShopper/auth')
+        fetch('http://megashopperapi-env-1.eba-xhhmp83v.us-east-2.elasticbeanstalk.com/MegaShopper/users')
             .then(resp => resp.json())
             .then(data => setUsers(data));
 
