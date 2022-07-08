@@ -13,7 +13,7 @@ export default function Navbar() {
           <a href="/register">Register</a>
         </li>
         <li>
-          <a href="/cart">Cart</a>
+          {/* <a href="/cart">Cart</a> */}
         </li>
         {/* <li>
           <a href="/dashboard">Customer Dashboard</a>
