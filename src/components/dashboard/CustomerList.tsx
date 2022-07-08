@@ -12,12 +12,12 @@ return(
     
      <List {...props} filters={<CustomerFilter/>}>
         <Datagrid>
-            <TextField source='id'/>
-            <TextField source='first_name'/>
-            <TextField source='last_name'/>
+            <TextField source='customerId'/>
+            <TextField source='firstName'/>
+            <TextField source='lastName'/>
             <TextField source='email'/>
-            {/* <TextField source='address'/>
-            <TextField source='orders'/> */}
+            <TextField source='address'/>
+            <TextField source='username'/>
         </Datagrid>
      </List>
     
