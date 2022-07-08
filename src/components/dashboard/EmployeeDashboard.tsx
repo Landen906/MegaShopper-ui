@@ -7,8 +7,8 @@ import  User  from "../../models/user";
 
 const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'first_name', headerName: 'First name', width: 130 },
-    { field: 'last_name', headerName: 'Last name', width: 130 },
+    { field: 'firstname', headerName: 'First name', width: 130 },
+    { field: 'lastname', headerName: 'Last name', width: 130 },
     { field: 'email', headerName: 'Email Address', width: 130 },
     { field: 'address', headerName: 'Address', width: 130 },
     { field: 'username', headerName: 'Username', width: 130 },
@@ -27,7 +27,7 @@ function EmployeeDashboard() {
     const {addItem, user, products, deleteItem} = useContext(GlobalContext);
 
     useEffect(() => {
-        fetch('http://localhost:8080/bankingApp/registration')
+        fetch('http://megashopperapi-env-1.eba-xhhmp83v.us-east-2.elasticbeanstalk.com/MegaShopper/users')
             .then(resp => resp.json())
             .then(data => setUsers(data));
 

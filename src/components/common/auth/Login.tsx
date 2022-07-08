@@ -24,8 +24,8 @@ export const Login = () => {
       return setError("Must provide a email and password!")
     }
 // Fetching when my if condition is true
-    fetch("/login", {
-      method: "POST",
+    fetch("http://megashopperapi-env-1.eba-xhhmp83v.us-east-2.elasticbeanstalk.com/MegaShopper/users", {
+      method: "GET",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: email,
